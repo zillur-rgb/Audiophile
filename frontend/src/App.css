@@ -38,11 +38,12 @@ input:focus {
   margin: 0 7%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .contact {
   border: 1px solid rgba(0, 0, 0, 0.3);
   width: 30%;
-  margin: 0 5px;
+  margin: 5px;
 }
 
 h4 {
