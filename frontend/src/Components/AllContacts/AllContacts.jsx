@@ -1,16 +1,25 @@
 import React from "react";
+import "./AllContacts.css";
 
-const AllContacts = ({ persons }) => {
+const AllContacts = ({ person, deleteContact }) => {
   return (
-    <div className="contact-block">
-      {persons.map((person) => {
-        return (
-          <div className="contact" key={person.number}>
-            <h4 className="name-text">{person.name}</h4>
-            <p>{person.number}</p>
-          </div>
-        );
-      })}
+    <div>
+      {
+        <div className="contact" key={person.id}>
+          <h4 className="name-text">{person.name}</h4>
+          <p>{person.number}</p>
+          <button
+            style={{
+              backgroundColor: "red",
+              padding: "5px 10px",
+              cursor: "pointer",
+            }}
+            onClick={deleteContact}
+          >
+            Delete Contact
+          </button>
+        </div>
+      }
     </div>
   );
 };

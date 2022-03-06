@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 import AllContacts from "./Components/AllContacts/AllContacts";
+import fetchServices from "./Components/fetchServices/fetchServices";
 import Filter from "./Components/Filter/Filter";
 import Form from "./Components/Form/Form";
 
@@ -12,7 +13,9 @@ const App = () => {
   const [filteredPerson, setFilteredPerson] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/persons").then((res) => {
+    console.log("effect");
+    fetchServices.getAll().then((res) => {
+      console.log("Promise fulfilled");
       setPersons(res.data);
       setFilteredPerson(res.data);
     });
@@ -25,18 +28,45 @@ const App = () => {
       number: newNumber,
     };
 
-    const alreadyExist = persons.find((person) => person.name === newName);
+    if (persons.find((person) => person.name === newName)) {
+      if (
+        window.confirm(
+          `${newName} is already in the list. Do you want to replace the number?`
+        )
+      ) {
+        console.log(newName);
+        const name = persons.find((p) => p.name === newName);
+        console.log(name);
+        const changedNum = { ...name, number: newNumber };
+        console.log(changedNum);
 
-    if (alreadyExist) {
-      alert(`${newName} is already in the list`);
-      setNewName("");
-      setNewNumber("");
+        axios
+          .put(`http://localhost:3001/persons/${name.id}`, changedNum)
+          .then((res) => {
+            setPersons(
+              persons.map((person) =>
+                person.id !== name.id ? person : res.data
+              )
+            );
+          });
+      }
     } else {
-      setPersons(persons.concat(newContact));
-      setFilteredPerson(persons.concat(newContact));
+      fetchServices.create(newContact).then((res) => {
+        setPersons(persons.concat(res.data));
+        setFilteredPerson(persons.concat(res.data));
+      });
+    }
+    setNewName("");
+    setNewNumber("");
+  };
 
-      setNewName("");
-      setNewNumber("");
+  const deleteContact = (id) => {
+    console.log(id);
+    if (window.confirm("Are you sure want to delete this contact?")) {
+      axios.delete(`http://localhost:3001/persons/${id}`).then((res) => {
+        setPersons(persons.filter((person) => person.id !== id));
+        setFilteredPerson(persons.filter((person) => person.id !== id));
+      });
     }
   };
 
@@ -69,7 +99,19 @@ const App = () => {
       <h2>My Contacts</h2>
       <Filter handleSearch={handleSearch} />
 
-      <AllContacts persons={persons} />
+      <div className="contact-block">
+        {persons.map((person) => {
+          return (
+            <AllContacts
+              person={person}
+              key={person.id}
+              deleteContact={() => {
+                deleteContact(person.id);
+              }}
+            />
+          );
+        })}
+      </div>
       <div>debug: {newName}</div>
     </div>
   );
