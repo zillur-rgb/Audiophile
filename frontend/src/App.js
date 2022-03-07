@@ -5,12 +5,14 @@ import AllContacts from "./Components/AllContacts/AllContacts";
 import fetchServices from "./Components/fetchServices/fetchServices";
 import Filter from "./Components/Filter/Filter";
 import Form from "./Components/Form/Form";
+import Notification from "./Components/Notification/Notification";
 
 const App = () => {
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [filteredPerson, setFilteredPerson] = useState([]);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     console.log("effect");
@@ -49,6 +51,10 @@ const App = () => {
               )
             );
           });
+        setMessage(`The number of ${changedNum.name} has been updated`);
+        setTimeout(() => {
+          setMessage("");
+        }, 5000);
       }
     } else {
       fetchServices.create(newContact).then((res) => {
@@ -98,6 +104,8 @@ const App = () => {
       />
       <h2>My Contacts</h2>
       <Filter handleSearch={handleSearch} />
+
+      <Notification message={message} />
 
       <div className="contact-block">
         {persons.map((person) => {
