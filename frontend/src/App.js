@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 import AllContacts from "./Components/AllContacts/AllContacts";
@@ -42,15 +41,11 @@ const App = () => {
         const changedNum = { ...name, number: newNumber };
         console.log(changedNum);
 
-        axios
-          .put(`http://localhost:3001/persons/${name.id}`, changedNum)
-          .then((res) => {
-            setPersons(
-              persons.map((person) =>
-                person.id !== name.id ? person : res.data
-              )
-            );
-          });
+        fetchServices.update(name.id, changedNum).then((res) => {
+          setPersons(
+            persons.map((person) => (person.id !== name.id ? person : res.data))
+          );
+        });
         setMessage(`The number of ${changedNum.name} has been updated`);
         setTimeout(() => {
           setMessage("");
@@ -69,7 +64,7 @@ const App = () => {
   const deleteContact = (id) => {
     console.log(id);
     if (window.confirm("Are you sure want to delete this contact?")) {
-      axios.delete(`http://localhost:3001/persons/${id}`).then((res) => {
+      fetchServices.deleteData(id).then((res) => {
         setPersons(persons.filter((person) => person.id !== id));
         setFilteredPerson(persons.filter((person) => person.id !== id));
       });
