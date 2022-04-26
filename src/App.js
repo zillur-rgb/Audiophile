@@ -1,9 +1,10 @@
 import "./App.css";
+import Allpages from "./pages/Allpages/Allpages";
 
 function App() {
   return (
-    <div className="container bg-orange">
-      <h1 className="text-black">Hello Moto</h1>
+    <div className="container bg-orange mx-auto">
+      <Allpages />
     </div>
   );
 }
