@@ -31,7 +31,7 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="  bg-black">
+    <div>
       <div className="container py-4 flex items-center mx-auto justify-between">
         <div className="logo">
           <h1 className="text-white font-black text-3xl">audiophile</h1>

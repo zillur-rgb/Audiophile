@@ -1,6 +1,16 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts, tsx}"],
   theme: {
+    extend: {
+      lineHeight: {
+        "extra-loose": "2.5",
+        12: "3rem",
+      },
+      backgroundImage: {
+        "hero-desktop": "url('/src/assets/images/home/desktop/image-hero.jpg')",
+        "hero-mobile": "url('/src/assets/images/home/mobile/image-hero.jpg')",
+      },
+    },
     colors: {
       bg: "#fafafa",
       orange: "#d87d4a",
@@ -17,6 +27,16 @@ module.exports = {
     },
     fontFamily: {
       manrope: ["Manrope", "sans-serif"],
+    },
+
+    letterSpacing: {
+      tightest: "-.075em",
+      tighter: "-.05em",
+      tight: "-.025em",
+      normal: "0",
+      wide: ".025em",
+      wider: ".05em",
+      widest: ".5em",
     },
   },
   plugins: [],
