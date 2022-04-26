@@ -9,6 +9,7 @@ module.exports = {
       backgroundImage: {
         "hero-desktop": "url('/src/assets/images/home/desktop/image-hero.jpg')",
         "hero-mobile": "url('/src/assets/images/home/mobile/image-hero.jpg')",
+        "hero-tablet": "url('/src/assets/images/home/tablet/image-hero.jpg')",
       },
     },
     colors: {

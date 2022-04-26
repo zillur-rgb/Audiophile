@@ -4,8 +4,9 @@ import Navbar from "../Navbar/Navbar";
 
 const Banner = () => {
   return (
-    <div className="bg-hero-mobile md:bg-hero-desktop h-full bg-cover bg-center bg-no-repeat w-full">
+    <div className="bg-hero-mobile md:bg-hero-desktop sm:bg-hero-tablet h-full bg-cover bg-center bg-no-repeat w-full">
       <Navbar />
+      <div className="border bg-divider h-px container mx-auto"></div>
       <div className="texts container h-full mx-auto flex flex-col items-center md:items-start justify-center">
         <p className="text-text tracking-widest text-center">NEW PRODUCT</p>
         <h1 className="text-3xl xl:text-6xl uppercase font-medium text-white text-center md:text-left w-full md:w-1/3 leading-snug mt-4">
