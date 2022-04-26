@@ -7,12 +7,14 @@ import Home from "../Home";
 
 const Allpages = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/headphones" element={<Headphones />} />
-      <Route path="/earhones" element={<Earphones />} />
-      <Route path="/speakers" element={<Speakers />} />
-    </Routes>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/headphones" element={<Headphones />} />
+        <Route path="/earphones" element={<Earphones />} />
+        <Route path="/speakers" element={<Speakers />} />
+      </Routes>
+    </div>
   );
 };
 
