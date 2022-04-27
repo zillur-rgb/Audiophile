@@ -6,6 +6,10 @@ module.exports = {
         "extra-loose": "2.5",
         12: "3rem",
       },
+      spacing: {
+        36: "155px",
+        20: "20%",
+      },
       backgroundImage: {
         "hero-desktop": "url('/src/assets/images/home/desktop/image-hero.jpg')",
         "hero-mobile": "url('/src/assets/images/home/mobile/image-hero.jpg')",
@@ -19,6 +23,7 @@ module.exports = {
 
       height: {
         500: "570px",
+        700: "700px",
       },
     },
     colors: {
@@ -30,7 +35,7 @@ module.exports = {
       white: "#fff",
       black: "#191919",
       text: "rgba(255, 255, 255, 0.5)",
-      divider: "rgba(255, 2555, 255, 0.1)",
+      divider: "rgba(255, 255, 255, 0.1)",
       placeholder: "rgba(0, 0, 0, 0.4)",
       inputBorder: "#cfcfcf",
       inputError: "#cd2c2c",
@@ -44,6 +49,7 @@ module.exports = {
       tighter: "-.05em",
       tight: "-.025em",
       normal: "0",
+      normalWide: ".0em",
       wide: ".125em",
       wider: ".25em",
       widest: ".5em",

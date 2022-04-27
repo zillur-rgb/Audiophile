@@ -21,12 +21,12 @@ const Category = () => {
     },
   ];
   return (
-    <div className="container mx-auto relative grid grid-cols-1 sm:grid-cols-3 gap-12">
+    <div className="container w-5/6 lg:max-w-7xl mx-auto relative grid grid-cols-1 md:grid-cols-3 gap-12">
       {category.map((cat, idx) => (
         <Link key={idx} to={`/${cat.name}`}>
           <div className="text-center flex justify-center flex-col items-center group cursor-pointer sm:mt-36 mt-28 sm:w-full w-4/5 container mx-auto">
-            <img src={cat.url} alt="productPic" className="w-1/3 " />
-            <div className="bg-gray rounded-xl pt-28 pb-8 w-full -m-24 -z-10">
+            <img src={cat.url} alt="productPic" className="w-1/3 z-10" />
+            <div className="bg-gray rounded-xl pt-28 pb-8 w-full -m-24 ">
               <p className="uppercase text-xl font-medium tracking-wider text-black">
                 {cat.name}
               </p>
