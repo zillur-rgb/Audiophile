@@ -23,13 +23,10 @@ const Category = () => {
   return (
     <div className="container mx-auto relative grid grid-cols-1 sm:grid-cols-3 gap-12">
       {category.map((cat, idx) => (
-        <Link to={`/${cat.name}`}>
-          <div
-            key={idx}
-            className=" text-center flex justify-center flex-col items-center group cursor-pointer sm:mt-36 mt-28 sm:w-full w-4/5 container mx-auto"
-          >
+        <Link key={idx} to={`/${cat.name}`}>
+          <div className="text-center flex justify-center flex-col items-center group cursor-pointer sm:mt-36 mt-28 sm:w-full w-4/5 container mx-auto">
             <img src={cat.url} alt="productPic" className="w-1/3 " />
-            <div className="bg-gray rounded-xl pt-28 w-full -m-24 -z-10">
+            <div className="bg-gray rounded-xl pt-28 pb-8 w-full -m-24 -z-10">
               <p className="uppercase text-xl font-medium tracking-wider text-black">
                 {cat.name}
               </p>

@@ -10,6 +10,15 @@ module.exports = {
         "hero-desktop": "url('/src/assets/images/home/desktop/image-hero.jpg')",
         "hero-mobile": "url('/src/assets/images/home/mobile/image-hero.jpg')",
         "hero-tablet": "url('/src/assets/images/home/tablet/image-hero.jpg')",
+        "speaker-home":
+          "url('/src/assets/images/home/desktop/pattern-circles.svg')",
+        zx7: "url('/src/assets/images/home/desktop/image-speaker-zx7.jpg')",
+        "zx7-mobile":
+          "url('/src/assets/images/home/mobile/image-speaker-zx7.jpg')",
+      },
+
+      height: {
+        500: "570px",
       },
     },
     colors: {
@@ -35,7 +44,7 @@ module.exports = {
       tighter: "-.05em",
       tight: "-.025em",
       normal: "0",
-      wide: ".025em",
+      wide: ".125em",
       wider: ".25em",
       widest: ".5em",
     },
