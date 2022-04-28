@@ -9,9 +9,7 @@ const BannerInside = ({ text, padding }) => {
         <div className=" bg-divider h-px container mx-auto"></div>
         <h1
           className={`
-        text-white uppercase font-medium text-4xl text-center py-${parseInt(
-          padding
-        )}
+        text-white uppercase font-medium text-4xl text-center ${padding}
         `}
         >
           {text}
