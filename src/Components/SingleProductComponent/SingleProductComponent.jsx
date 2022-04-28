@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ScreenSize from "../ScreenSize/ScreenSize";
 
 const SingleProductComponent = ({ product }) => {
@@ -13,9 +14,11 @@ const SingleProductComponent = ({ product }) => {
       <ScreenSize image={product?.image} />
 
       <div className="right w-full lg:w-1/2 flex flex-col lg:items-start items-center">
-        <p className="text-orange tracking-widest py-8 text-center lg:text-left">
-          NEW PRODUCT
-        </p>
+        {product.new && (
+          <p className="text-orange tracking-widest py-8 text-center lg:text-left">
+            NEW PRODUCT
+          </p>
+        )}
         <h1 className="text-black text-3xl font-medium text-center lg:text-left">
           {product?.name}
         </h1>
@@ -23,9 +26,11 @@ const SingleProductComponent = ({ product }) => {
           {product?.description}
         </p>
 
-        <button className="py-4 px-10 rounded-md bg-orange text-white hover:bg-orange-light">
-          see products
-        </button>
+        <Link to={`/${product.category}/${product.slug}`}>
+          <button className="py-4 uppercase px-7 rounded-md bg-orange text-white hover:bg-orange-light">
+            see products
+          </button>
+        </Link>
       </div>
     </div>
   );

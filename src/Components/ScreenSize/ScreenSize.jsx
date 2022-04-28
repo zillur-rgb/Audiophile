@@ -1,7 +1,4 @@
 import { useState, useEffect } from "react";
-import headphoneImg from "../../assets/images/category-headphones/desktop/image-xx99-mark-two.jpg";
-import headphoneTab from "../../assets/images/category-headphones/tablet/image-xx99-mark-two.jpg";
-import headphoneMobile from "../../assets/images/category-headphones/mobile/image-xx99-mark-two.jpg";
 
 export default function ScreenSize({ image }) {
   const [windowDimenion, detectHW] = useState({

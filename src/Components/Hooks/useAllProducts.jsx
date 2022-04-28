@@ -6,10 +6,11 @@ const useAllProducts = () => {
 
   useEffect(() => {
     axios
-      .get("products.json")
+      .get("/products.json")
       .then((res) => setAllProducts(res.data.products))
       .catch((err) => console.log(err.messsage));
   }, []);
+  console.log(allProducts);
 
   return [allProducts, setAllProducts];
 };

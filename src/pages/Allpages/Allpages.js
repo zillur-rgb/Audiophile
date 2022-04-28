@@ -4,7 +4,7 @@ import Speakers from "../Speakers";
 import Earphones from "../Earphones";
 import Headphones from "../Headphones";
 import Home from "../Home";
-import Details from "../Details";
+import Details from "../../Components/Details/Details";
 
 const Allpages = () => {
   return (
@@ -14,7 +14,7 @@ const Allpages = () => {
         <Route path="/headphones" element={<Headphones />} />
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/speakers" element={<Speakers />} />
-        <Route path="/details" element={<Details />} />
+        <Route path="/:category/:product" element={<Details />} />
         <Route
           path="*"
           element={

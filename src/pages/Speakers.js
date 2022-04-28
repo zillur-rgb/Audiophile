@@ -8,7 +8,7 @@ import Products from "../Components/Products/Products";
 const Speakers = () => {
   return (
     <div>
-      <BannerInside padding="py-24" text="headphones" />
+      <BannerInside padding="py-24" text="speakers" />
       <Products category="speakers" />
       <Category />
       <BestGear />

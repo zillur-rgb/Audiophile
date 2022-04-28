@@ -34,7 +34,9 @@ const Navbar = () => {
     <div>
       <div className="py-8 flex items-center container mx-auto justify-between">
         <div className="logo">
-          <h1 className="text-white font-black text-3xl">audiophile</h1>
+          <Link to="/">
+            <h1 className="text-white font-black text-3xl">audiophile</h1>
+          </Link>
         </div>
 
         <ul className="navbar hidden sm:flex">
