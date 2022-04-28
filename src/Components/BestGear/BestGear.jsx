@@ -2,7 +2,7 @@ import BestGearImg from "../../assets/images/shared/desktop/image-best-gear.jpg"
 
 const BestGear = () => {
   return (
-    <div className="container w-5/6 lg:max-w-7xl mx-auto lg:flex items-center gap-12">
+    <div className="container w-5/6 lg:max-w-7xl mx-auto mt-32 lg:flex items-center gap-12">
       <div className="texts w-full lg:w-1/2 md:text-left text-center">
         <h1 className="text-black text-5xl tracking-normalWide font-medium">
           BRINGING YOU THE <span className="text-orange">BEST</span> AUDIO GEAR

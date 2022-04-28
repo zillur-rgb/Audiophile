@@ -1,9 +1,15 @@
-import React from "react";
+import Footer from "../Components/Footer/Footer";
+import Category from "../Components/Category/Category";
+import BestGear from "../Components/BestGear/BestGear";
+import BannerInside from "../Components/BannerInside.jsx/BannerInside";
 
 const Headphones = () => {
   return (
     <div>
-      <h1>This is all headphone page</h1>
+      <BannerInside padding="24" text="headphones" />
+      <Category />
+      <BestGear />
+      <Footer />
     </div>
   );
 };

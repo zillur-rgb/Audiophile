@@ -4,10 +4,10 @@ import BestGear from "../Components/BestGear/BestGear";
 import Category from "../Components/Category/Category";
 import Footer from "../Components/Footer/Footer";
 
-const Speakers = () => {
+const Details = () => {
   return (
     <div>
-      <BannerInside padding="24" text="headphones" />
+      <BannerInside />
       <Category />
       <BestGear />
       <Footer />
@@ -15,4 +15,4 @@ const Speakers = () => {
   );
 };
 
-export default Speakers;
+export default Details;
