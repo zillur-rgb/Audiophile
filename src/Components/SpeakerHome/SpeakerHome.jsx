@@ -3,7 +3,7 @@ import speakerImg from "../../assets/images/home/desktop/image-speaker-zx9.png";
 
 const SpeakerHome = () => {
   return (
-    <div className="bg-orange mt-56 container w-5/6 lg:max-w-7xl mx-auto rounded-2xl px-8 lg:px-56 h-full xl:h-500 bg-speaker-home bg-no-repeat bg-contain bg-center flex flex-col lg:flex-row items-center lg:items-end lg:justify-between justify-center">
+    <div className="bg-orange mt-56 container w-5/6 lg:max-w-7xl mx-auto rounded-2xl lg:py-0 py-16 px-8 lg:px-56 h-full xl:h-500 bg-speaker-home bg-no-repeat bg-contain bg-center flex flex-col lg:flex-row items-center lg:items-end lg:justify-between justify-center">
       <img
         src={speakerImg}
         className="w-5/6 sm:w-3/5 lg:w-2/4 mr-0 lg:mr-8 "

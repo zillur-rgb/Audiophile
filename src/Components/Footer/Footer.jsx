@@ -34,18 +34,20 @@ const Footer = () => {
   ];
   return (
     <div className=" bg-black w-screen mt-32">
-      <div className="container mx-auto w-5/6 lg:max-w-7xl flex flex-col md:flex-row py-12 ">
+      <div className="container mx-auto w-5/6 lg:max-w-7xl flex flex-col md:flex-row py-6 ">
         <div className="left w-full md:w-1/2 mr-12">
           <Link to="/">
-            <h1 className="text-white font-black text-3xl">audiophile</h1>
+            <h1 className="text-white font-black text-3xl md:text-left text-center">
+              audiophile
+            </h1>
           </Link>
-          <p className="my-12 text-text">
+          <p className="my-12 text-text text-center md:text-left">
             Audiophile is an all in one stop to fulfill your audio needs. We're
             a small team of music lovers and sound specialists who are devoted
             to helping you get the most out of personal audio. Come and visit
             our demo facility - were open 7 days a week.
           </p>
-          <p className="text-text">
+          <p className="text-text text-center md:text-left">
             Copyright 2021. MD Zillur Rahman. All Rights Reserved
           </p>
         </div>

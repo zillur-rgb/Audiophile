@@ -22,7 +22,7 @@ const Category = () => {
     },
   ];
   return (
-    <div className="container w-5/6 lg:max-w-7xl mx-auto relative grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div className="container w-5/6 lg:max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-12">
       {category.map((cat, idx) => (
         <Link key={idx} to={`/${cat.name}`}>
           <div

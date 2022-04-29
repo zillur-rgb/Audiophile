@@ -52,7 +52,7 @@ const Navbar = () => {
           {menus.map((menu, idx) => (
             <Link to={menu.url} key={idx}>
               <li
-                className={`nav text-white font-semibold normal-case md:uppercase mx-7 xl:mx-28 l:mx-10 first:ml-0 hover:text-orange ${
+                className={`nav text-white font-semibold normal-case lg:uppercase mx-4 xl:mx-16 l:mx-10 first:ml-0 hover:text-orange ${
                   routeMatchPath(menu.url) ? "text-orange" : "text-white"
                 }`}
               >
