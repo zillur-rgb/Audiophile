@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Speakers from "../Speakers";
-import Earphones from "../Earphones";
+import Earphones from "../Earphones/Earphones";
 import Headphones from "../Headphones";
 import Home from "../Home";
 import Details from "../../Components/Details/Details";

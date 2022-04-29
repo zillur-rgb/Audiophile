@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { HiPlusSm, HiMinusSm } from "react-icons/hi";
+import CartContext from "../../CartContext";
 import ScreenSize from "../ScreenSize/ScreenSize";
 
 const SingleDetail = ({ exactProduct }) => {
+  const [count, setCount] = useState(1);
+  const { addToCart, items } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    addToCart({ exactProduct, count });
+  };
+
+  console.log(items);
+
   return (
     <div className="container w-4/6 lg:max-w-7xl mx-auto my-16 flex flex-col lg:flex-row items-center">
       <ScreenSize image={exactProduct?.image} />
@@ -26,11 +36,26 @@ const SingleDetail = ({ exactProduct }) => {
 
         <div className="add-cart-section flex">
           <div className="quantity flex items-center justify-center rounded-md bg-gray p-3 text-text-black">
-            <HiMinusSm className="cursor-pointer" />
-            <p className="mx-3 text-black font-semibold">1</p>
-            <HiPlusSm className="cursor-pointer" />
+            <HiMinusSm
+              className="cursor-pointer"
+              onClick={() => {
+                if (count > 0) {
+                  setCount(count - 1);
+                } else {
+                  return;
+                }
+              }}
+            />
+            <p className="mx-3 text-black font-semibold">{count}</p>
+            <HiPlusSm
+              className="cursor-pointer"
+              onClick={() => setCount(count + 1)}
+            />
           </div>
-          <button className="uppercase py-3 rounded-md text-white hover:bg-orange-light mx-3 px-6 bg-orange text-xs">
+          <button
+            className="uppercase py-3 rounded-md text-white hover:bg-orange-light mx-3 px-6 bg-orange text-xs font-medium"
+            onClick={handleAddToCart}
+          >
             add to cart
           </button>
         </div>

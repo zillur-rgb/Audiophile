@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiOutlineShoppingCart, HiMenuAlt3 } from "react-icons/hi";
+import CartContext from "../../CartContext";
 
 const Navbar = () => {
   const [showNavMenu, setShowNavMenu] = useState(false);
   const location = useLocation();
+  const { items } = useContext(CartContext);
+  console.log(items);
 
   const routeMatchPath = (route) => {
     if (location.pathname === route) {
@@ -54,8 +57,9 @@ const Navbar = () => {
         </ul>
 
         <div className="rightMost flex">
-          <div className="cart text-white  mr-5 text-2xl">
+          <div className="cart text-white  mr-5 text-2xl flex items-center cursor-pointer">
             <HiOutlineShoppingCart />
+            <p className="text-white text-sm ml-2">{items.length}</p>
           </div>
 
           <div className="hamburger text-white text-2xl mr-5 block sm:hidden cursor-pointer">
