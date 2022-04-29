@@ -63,8 +63,11 @@ const Navbar = () => {
         </ul>
 
         <div className="rightMost flex">
-          <div className="cart text-white  mr-5 text-2xl flex items-center cursor-pointer">
-            <HiOutlineShoppingCart onClick={() => setShowModal(true)} />
+          <div
+            className="cart text-white  mr-5 text-2xl flex items-center cursor-pointer"
+            onClick={() => setShowModal(true)}
+          >
+            <HiOutlineShoppingCart />
             <p className="text-white text-sm ml-2">{items.length}</p>
           </div>
 
@@ -76,10 +79,14 @@ const Navbar = () => {
             />
           </div>
         </div>
-        <CartCard show={showModal} handleModalClose={handleModalClose}>
-          <h1>This is my cart</h1>
-        </CartCard>
       </div>
+      <CartCard
+        show={showModal}
+        handleModalClose={handleModalClose}
+        setShowModal={setShowModal}
+      >
+        <h1>This is my cart</h1>
+      </CartCard>
       {showNavMenu && (
         <ul className="navbar container flex-col flex sm:hidden text-center absolute mx-auto bg-black z-1000">
           {menus.map((menu, idx) => (

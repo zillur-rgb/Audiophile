@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
     setItems((prevState) => [...prevState, product]);
   };
   return (
-    <CartContext.Provider value={{ items, addToCart }}>
+    <CartContext.Provider value={{ items, setItems, addToCart }}>
       {children}
     </CartContext.Provider>
   );
