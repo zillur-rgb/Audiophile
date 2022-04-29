@@ -2,17 +2,23 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiOutlineShoppingCart, HiMenuAlt3 } from "react-icons/hi";
 import CartContext from "../../CartContext";
+import CartCard from "../CartCard/CartCard";
 
 const Navbar = () => {
   const [showNavMenu, setShowNavMenu] = useState(false);
   const location = useLocation();
   const { items } = useContext(CartContext);
-  console.log(items);
+  const [showModal, setShowModal] = useState(false);
 
   const routeMatchPath = (route) => {
     if (location.pathname === route) {
       return true;
     }
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+    console.log(showModal);
   };
   const menus = [
     {
@@ -58,7 +64,7 @@ const Navbar = () => {
 
         <div className="rightMost flex">
           <div className="cart text-white  mr-5 text-2xl flex items-center cursor-pointer">
-            <HiOutlineShoppingCart />
+            <HiOutlineShoppingCart onClick={() => setShowModal(true)} />
             <p className="text-white text-sm ml-2">{items.length}</p>
           </div>
 
@@ -70,6 +76,9 @@ const Navbar = () => {
             />
           </div>
         </div>
+        <CartCard show={showModal} handleModalClose={handleModalClose}>
+          <h1>This is my cart</h1>
+        </CartCard>
       </div>
       {showNavMenu && (
         <ul className="navbar container flex-col flex sm:hidden text-center absolute mx-auto bg-black z-1000">
