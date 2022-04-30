@@ -27,7 +27,7 @@ const CartCard = ({ show, handleModalClose, setShowModal }) => {
           >
             Close
           </button>
-          <Link to="/earphones">
+          <Link to="/checkout">
             <button
               onClick={handleModalClose}
               className=" ml-2 px-6 py-2 bg-orange text-white"

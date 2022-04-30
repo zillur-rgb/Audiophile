@@ -68,7 +68,9 @@ const Navbar = () => {
             onClick={() => setShowModal(true)}
           >
             <HiOutlineShoppingCart />
-            <p className="text-white text-sm ml-2">{items.length}</p>
+            <p className="text-white py-1 px-2 rounded-full bg-orange text-sm ml-2">
+              {items.length}
+            </p>
           </div>
 
           <div className="hamburger text-white text-2xl mr-5 block sm:hidden cursor-pointer">

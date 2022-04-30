@@ -20,7 +20,7 @@ const CardContent = () => {
       <ul className="p-6">
         <div className="flex sm:flex-row flex-col items-center justify-between pb-2">
           <h1 className="text-black text-2xl font-medium">
-            Cart {items.length}
+            Cart ({items.length})
           </h1>
           <p
             className=" cursor-pointer underline text-text-black hover:text-black"
