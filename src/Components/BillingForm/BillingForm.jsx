@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { GiCardExchange } from "react-icons/gi";
 const BillingForm = () => {
   const [radioValue, setRadioValue] = useState("e-money");
 
@@ -90,7 +90,7 @@ const BillingForm = () => {
           <div className="form-group w-2/5 flex justify-between">
             <p>Payment Method</p>
             <div>
-              <div className="border-2 border-lightGray py-4 pl-3 pr-16 mb-4 flex items-center">
+              <div className="border-2 border-lightGray py-4 pl-3 pr-16 mb-4 flex items-center  rounded-md">
                 <input
                   type="radio"
                   name="radio"
@@ -103,7 +103,7 @@ const BillingForm = () => {
                 e-money
                 <label htmlFor="e-money"></label>
               </div>
-              <div className="border-2 border-lightGray py-4 pl-3 pr-16 mt-4 flex items-center">
+              <div className="border-2 border-lightGray py-4 pl-3 pr-16 mt-4 flex items-center rounded-md">
                 <input
                   type="radio"
                   name="radio"
@@ -113,11 +113,13 @@ const BillingForm = () => {
                   checked={radioValue === "cash"}
                   onChange={({ target }) => setRadioValue(target.value)}
                 />
-                <label htmlFor="cash"> Cash on Delivery</label>
+                <label htmlFor="cash" className=" whitespace-nowrap">
+                  {" "}
+                  Cash on Delivery
+                </label>
               </div>
             </div>
           </div>
-
           {radioValue === "e-money" && (
             <div className="w-full flex gap-8">
               <div className="form-group w-2/5">
@@ -140,6 +142,17 @@ const BillingForm = () => {
                   className="w-full p-3 mt-3 rounded-md border-2 border-lightGray focus:outline-orange-light"
                 />
               </div>
+            </div>
+          )}
+          {radioValue === "cash" && (
+            <div className="w-3/5 flex items-center">
+              <GiCardExchange className=" text-9xl mr-4 text-orange" />
+              <p className="text-text-black font-light">
+                The ‘Cash on Delivery’ option enables you to pay in cash when
+                our delivery courier arrives at your residence. Just make sure
+                your address is correct so that your order will not be
+                cancelled.
+              </p>
             </div>
           )}
         </div>
